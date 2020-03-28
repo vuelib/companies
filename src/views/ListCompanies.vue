@@ -7,13 +7,15 @@
         <th>Nome</th>
         <th>CNPJ</th>
       </thead>
-      <tr v-for="company in companies" :key="company.id">
+      <tr v-bind:key="company.id" v-for="company in companies">
         <td
           :style="{
-          fontWeight: 'bold',
-          color: company.attributes.active ? 'green' : 'red'
-        }"
-        >{{ company.attributes.active ? 'Ativo' : 'Inativo' }}</td>
+            fontWeight: 'bold',
+            color: company.attributes.active ? 'green' : 'red'
+          }"
+        >
+          {{ company.attributes.active ? 'Ativo' : 'Inativo' }}
+        </td>
         <td>{{ company.attributes.legal_name }}</td>
         <td>{{ company.attributes.primary_registry }}</td>
       </tr>
@@ -23,14 +25,13 @@
 <script lang="ts">
 import Axios, { AxiosResponse } from 'axios';
 import { get, isEmpty } from 'lodash';
-import { Vue, Component, Watch } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 
 Component({
   name: 'ListCompanies',
 });
 export default class ListCompanies extends Vue {
   public companies: object = {};
-  public teste: string = 'carlos';
 
   private headers = {
     headers: {
