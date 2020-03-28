@@ -11,7 +11,7 @@
         <td
           :style="{
             fontWeight: 'bold',
-            color: company.attributes.active ? 'green' : 'red'
+            color: company.attributes.active ? 'green' : 'red',
           }"
         >
           {{ company.attributes.active ? 'Ativo' : 'Inativo' }}
