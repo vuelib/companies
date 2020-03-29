@@ -4,7 +4,7 @@ import { Config } from '@kernel-js/api/dist/Interfaces';
 
 export default class Company extends Model {
 
-  readonly baseUrl = 'https://crm-staging.platafoor.com/capi/companies';
+  readonly baseUrl = '/capi/companies';
   readonly fields = ['active', 'legal_name', 'primary_registry'];
   readonly relationshipNames = [''];
 
