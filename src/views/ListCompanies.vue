@@ -84,21 +84,27 @@ export default class ListCompanies extends Vue {
 <style scoped>
 .list-customers {
   width: 800px;
+  height: 510px;
   position: absolute;
   left: calc(50% - 400px);
+  color: #fff;
+  background: #000;
+  border-radius: 10px;
 }
 .list-customers p {
   font-size: 24px;
 }
 .list-customers table {
   width: 100%;
-  border: 1px solid #f2f2f2;
 }
 .list-customers table thead th {
   padding: 15px 10px;
 }
-.list-customers table tr:nth-child(even) {
-  background-color: #f2f2f2;
+.list-customers table tr {
+  background-color: #222;
+}
+.list-customers table tr:nth-child(odd) {
+  background-color: #000;
 }
 .list-customers table tr td {
   padding: 15px 10px;
