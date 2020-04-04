@@ -1,5 +1,5 @@
 <template>
-  <div class="list-customers">
+  <div class="list-companies">
     <p>Listagem de empresas</p>
     <table>
       <thead>
@@ -82,31 +82,30 @@ export default class ListCompanies extends Vue {
 </script>
 
 <style scoped>
-.list-customers {
-  width: 800px;
-  height: 510px;
+.list-companies {
+  width: 100%;
+  height: calc(100% - 40px);
   position: absolute;
-  left: calc(50% - 400px);
   color: #fff;
   background: #000;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
-.list-customers p {
+.list-companies p {
   font-size: 24px;
 }
-.list-customers table {
+.list-companies table {
   width: 100%;
 }
-.list-customers table thead th {
+.list-companies table thead th {
   padding: 15px 10px;
 }
-.list-customers table tr {
+.list-companies table tr {
   background-color: #222;
 }
-.list-customers table tr:nth-child(odd) {
+.list-companies table tr:nth-child(odd) {
   background-color: #000;
 }
-.list-customers table tr td {
+.list-companies table tr td {
   padding: 15px 10px;
 }
 </style>

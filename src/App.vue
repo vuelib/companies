@@ -1,6 +1,8 @@
 <template>
   <div id="companies-app">
-    <list-companies />
+    <sant-window :positionX="positionX" :positionY="80">
+      <list-companies />
+    </sant-window>
   </div>
 </template>
 
@@ -13,10 +15,14 @@ import { Component, Vue } from 'vue-property-decorator';
     ListCompanies,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private get positionX() {
+    return window.innerWidth / 2 - 400;
+  }
+}
 </script>
 
-<style>
+<style lang="scss">
 #companies-app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,4 +31,5 @@ export default class App extends Vue {}
   color: #2c3e50;
   margin-top: 60px;
 }
+@import '~@essencia-ui/vue-santorini/src/assets/scss/main';
 </style>

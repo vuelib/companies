@@ -6,10 +6,28 @@ declare module 'vue/types/vue' {
   }
 }
 
+/**
+ *
+ * @param {string} baseUrl
+ * @returns {string}
+ */
+function getEnvironmentUrl(baseUrl: string): string {
+  let appEnv = process.env.ENVIRONMENT;
+
+  if (appEnv === 'production') {
+    return baseUrl;
+  }
+
+  baseUrl = baseUrl.replace('.platafoor', `-staging.platafoor`);
+  baseUrl = baseUrl.replace('.popcartao', `-staging.popcartao`);
+
+  return baseUrl;
+}
+
 export default {
   install(Vue: any) {
     Vue.prototype.$request = Axios.create({
-      baseURL: 'https://crm-staging.platafoor.com',
+      baseURL: getEnvironmentUrl('https://crm.platafoor.com'),
       headers: {
         'App-Id': '7d04acde-118b-4a87-abde-af7d5a15d14f',
         'Content-Type' : 'application/json',
